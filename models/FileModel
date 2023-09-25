@@ -1,0 +1,13 @@
+const mongoose = require('mongoose');
+
+const fileSchema = new mongoose.Schema({
+  filename: String,
+  originalname: String,
+  mimetype: String,
+  size: Number,
+  path: String, // Store the path to the actual file on your server or storage service
+});
+
+const FileModel = mongoose.model('File', fileSchema);
+
+module.exports = FileModel;
